@@ -24,6 +24,6 @@ for i in range(num_sentences):
 	ans = text_model.make_sentence()
 	if ans: 
 		re.sub(r'\<.*?\>', '', ans)
-	print(ans)
+		print(ans)
 
 os.remove("~/Desktop/bobo.json")
