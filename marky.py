@@ -1,9 +1,20 @@
 import markovify
 import scrapy
 import sys
+import os
+import tempfile
+
 
 # Get raw text as string.
 with open("/Users/nhunguyen/Desktop/hackharvard/answer.json") as f:
+
+# input_tag = sys.argv[1]
+
+from subprocess import call
+call(["scrapy", "runspider", "stackoverflow_spider.py", "-o", "~/Desktop/bobo.json"])
+
+# Get raw text as string.
+with open("~/Desktop/bobo.json") as f:
     text = f.read()
 
 # Build the model.
@@ -16,3 +27,5 @@ for i in range(5):
 # Print three randomly-generated sentences of no more than 140 characters
 for i in range(3):
     print(text_model.make_short_sentence(140))
+
+os.remove("~/Desktop/bobo.json")

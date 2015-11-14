@@ -7,7 +7,8 @@ h1 {
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	text-align: center;
-	margin: 3em;
+	margin-top: 3em;
+	margin-bottom: 1em;
 }
 
 p {
@@ -16,6 +17,13 @@ p {
 	font-size: 15px;
 	letter-spacing: 0.2em;
 	text-align: center;
+}
+
+img {
+	text-align: center;
+	float: center;
+	margin-left: 48%;
+	margin-bottom: 1em;
 }
 
 /*********************************************************************************/
@@ -34,7 +42,7 @@ p {
 		}
 
 		#form .button {
-			border: solid 0.2em #000;
+			border: solid 0.2em #cdcdcd;
 			background-color: white;
 			color: #000;
 			cursor: pointer;
@@ -54,8 +62,8 @@ p {
 		}
 
 			#form .button:hover {
-				background-color: #dedede;
-				border: solid 0.2em #dedede;
+				background-color: #f09c40;
+				border: solid 0.2em #f09c40;
 				opacity: 1.0;
 				color: #fff;
 			}
@@ -141,3 +149,11 @@ p {
 			margin-bottom: 3em;
 			text-align: center;
 		}
+
+
+
+	#gallery {
+		text-align: center;
+		text-decoration: none;
+		float: center;
+	}
