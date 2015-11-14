@@ -42,7 +42,7 @@ img {
 		}
 
 		#form .button {
-			border: solid 0.2em #000;
+			border: solid 0.2em #cdcdcd;
 			background-color: white;
 			color: #000;
 			cursor: pointer;
@@ -62,8 +62,8 @@ img {
 		}
 
 			#form .button:hover {
-				background-color: #dedede;
-				border: solid 0.2em #dedede;
+				background-color: #f09c40;
+				border: solid 0.2em #f09c40;
 				opacity: 1.0;
 				color: #fff;
 			}
