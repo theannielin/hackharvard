@@ -5,8 +5,6 @@ import os
 import tempfile
 from subprocess import call
 import re
-import tornado.ioloop
-import tornado.web
 
 num_sentences = int(sys.argv[1])
 tag = str(sys.argv[2])
