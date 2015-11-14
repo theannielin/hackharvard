@@ -5,6 +5,7 @@ import os
 import tempfile
 from subprocess import call
 
+num_sentences = int(sys.argv[1])
 
 call(["scrapy", "runspider", "stackoverflow_spider.py", "-o", "~/Desktop/bobo.json"])
 
@@ -16,11 +17,7 @@ with open("~/Desktop/bobo.json") as f:
 text_model = markovify.Text(text)
 
 # Print five randomly-generated sentences
-for i in range(5):
+for i in range(num_sentences):
     print(text_model.make_sentence())
-
-# Print three randomly-generated sentences of no more than 140 characters
-for i in range(3):
-    print(text_model.make_short_sentence(140))
 
 os.remove("~/Desktop/bobo.json")
