@@ -3,14 +3,9 @@ import scrapy
 import sys
 import os
 import tempfile
-
-
-# Get raw text as string.
-with open("/Users/nhunguyen/Desktop/hackharvard/answer.json") as f:
-
-# input_tag = sys.argv[1]
-
 from subprocess import call
+
+
 call(["scrapy", "runspider", "stackoverflow_spider.py", "-o", "~/Desktop/bobo.json"])
 
 # Get raw text as string.
