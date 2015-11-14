@@ -18,10 +18,10 @@
 		<p>made by <a href="http://www.anniel.in">annie lin</a>, <a href="http://www.billiewei.com">billie wei</a>, <a href="http://www.joannekoong.com/">joanne koong</a>, <a href="http://www.nhunguyen.me/">nhu nguyen</a></p>
 		<div id="form" align="center">
 		<form id="text" method="post">
-			<input id="sentences" type="number" min="1" placeholder="How many sentences?"/>
+			<input id="sentences" type="number" min="1" placeholder="How many sentences?" required>
 			<br>
-			<div><textarea id="tag" rows="1" placeholder="tag"></textarea></div>
-			<input class="button" type="submit" value="Submit" />
+			<div><input id="tag" type="text" placeholder="tag" required pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+"required></input></div>
+			<input class="button" type="submit" value="Submit"/>
 		</form>
 		</div>
 		<br><br>
@@ -35,7 +35,7 @@
 					url;
 				e.preventDefault();
 				if (!(sentences > 0 && sentences < 50)){
-					$('#text').html('Too many sentences! Try a smaller number.');
+					$('#text').html('Try a more reasonable number.');
 					return;
 				}
 				if (tags) {

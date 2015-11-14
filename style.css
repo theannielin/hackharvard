@@ -87,7 +87,7 @@ img {
 	
 		form input[type="number"],
 		form input[type="email"],
-		form textarea
+		form input[type="text"]
 		{
 			text-align: center;
 			display: inline-block;
@@ -101,12 +101,6 @@ img {
 			letter-spacing: 0.1em;
 			margin-bottom: 2em;
 		}
-
-			form textarea {
-				
-				width: 34em;
-				margin-bottom: 3em;
-			}
 
 /*********************************************************************************/
 /* Icons                                                                         */
