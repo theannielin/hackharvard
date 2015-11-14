@@ -1,8 +1,12 @@
 import scrapy
+import sys
+
 
 class StackOverflowSpider(scrapy.Spider):
-    name = 'stackoverflow'
-    start_urls = ['http://stackoverflow.com/questions/tagged/c']
+    name = 'stackoverflow' 
+    def __init__(self, tag=None, *args, **kwargs):
+        super(StackOverflowSpider, self).__init__(*args, **kwargs)
+        self.start_urls = ['http://stackoverflow.com/questions/tagged/%s' %tag]
 
     def parse(self, response):
         for href in response.css('.question-summary h3 a::attr(href)'):

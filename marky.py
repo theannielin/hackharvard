@@ -1,12 +1,14 @@
 import markovify
 import scrapy
+import sys
 import os
 import tempfile
 from subprocess import call
 
 num_sentences = int(sys.argv[1])
+tag = str(sys.argv[2])
 
-call(["scrapy", "runspider", "stackoverflow_spider.py", "-o", "~/Desktop/bobo.json"])
+call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"])
 
 # Get raw text as string.
 with open("~/Desktop/bobo.json") as f:
