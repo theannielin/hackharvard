@@ -9,7 +9,17 @@ h1 {
 	text-align: center;
 	margin-top: 2.5em;
 	margin-bottom: 1em;
+	text-decoration: none;
 }
+
+	h1:hover {
+		color: #f09c40;
+		-moz-transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		-ms-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-out;
+	}
 
 p {
 	font-family: Avenir;
@@ -142,6 +152,18 @@ img {
 		#footer .copyright p {
 			font-size: 12px;
 		}
+
+/*********************************************************************************/
+/* Script                                                                      	 */
+/*********************************************************************************/
+
+	#text {
+		font-family: Avenir;
+		font-weight: 100;
+		font-size: 15px;
+		letter-spacing: 0.2em;
+		text-align: center;
+	}
 
 	#gallery {
 		text-align: center;
