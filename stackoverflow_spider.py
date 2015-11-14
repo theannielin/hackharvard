@@ -16,7 +16,6 @@ class StackOverflowSpider(scrapy.Spider):
     def parse_question(self, response):
         yield {
             'answer': response.css('.answercell .post-text').extract(),
-            
         }
 
 
