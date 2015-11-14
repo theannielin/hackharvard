@@ -1,7 +1,7 @@
 import markovify
 
 # Get raw text as string.
-with open("/Users/Annie/Dropbox/Fall 2015/Misc/hackharvard/gogo.txt") as f:
+with open("/Users/nhunguyen/Desktop/hackharvard/gogo.txt") as f:
     text = f.read()
 
 # Build the model.
