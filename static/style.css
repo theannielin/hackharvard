@@ -22,18 +22,18 @@ p {
 /* Forms                                                                         */
 /*********************************************************************************/
 	
-	#form-wrapper {
+	#form {
 		padding-top: 2em;
 		padding-bottom: 2em;
 		text-align: center;
 	}
 
-		#form-wrapper p {
+		#form p {
 			text-align: center;
 			margin-bottom: 3em;
 		}
 
-		#form-wrapper .button {
+		#form .button {
 			border: solid 0.2em #000;
 			background-color: white;
 			color: #000;
@@ -53,7 +53,7 @@ p {
 			transition: all 0.1s ease-out;
 		}
 
-			#form-wrapper .button:hover {
+			#form .button:hover {
 				background-color: #dedede;
 				border: solid 0.2em #dedede;
 				opacity: 1.0;
