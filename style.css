@@ -11,8 +11,6 @@ h1 {
 		font-family: Avenir;
 		font-weight: 200;
 		letter-spacing: 0.2em;
-		
-		
 		text-decoration: none;
 		color: #000;
 	}
@@ -27,7 +25,13 @@ p {
 	font-size: 15px;
 	letter-spacing: 0.2em;
 	text-align: center;
+	text-decoration: none;
 }
+
+	a {
+		text-decoration: none;
+		color: #000;
+	}
 
 img {
 	text-align: center;
@@ -99,7 +103,7 @@ img {
 		}
 
 			form textarea {
-				min-height: 12em;
+				
 				width: 34em;
 				margin-bottom: 3em;
 			}
