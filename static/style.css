@@ -7,7 +7,7 @@ h1 {
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 3em;
+	margin-top: 2.5em;
 	margin-bottom: 1em;
 }
 
@@ -122,9 +122,11 @@ img {
 /*********************************************************************************/
 
 	#footer {
-		padding-top: 4em;
 		text-align: center;
 		text-decoration: none;
+		font-family: Avenir;
+		color: #000;
+		margin-bottom: 1em;
 	}
 
 		#footer .icons a {
@@ -137,20 +139,9 @@ img {
 			text-align: center;
 		}
 
-			#footer .icons a:hover {
-				opacity: 1.0;
-				color: #C37FA6;
-			}
-
 		#footer .copyright p {
-			color: #000;
 			font-size: 12px;
-			margin-top: 10em;
-			margin-bottom: 3em;
-			text-align: center;
 		}
-
-
 
 	#gallery {
 		text-align: center;
