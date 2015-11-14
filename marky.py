@@ -5,9 +5,14 @@ import os
 import tempfile
 from subprocess import call
 import re
+import tornado.ioloop
+import tornado.web
 
 num_sentences = int(sys.argv[1])
 tag = str(sys.argv[2])
+
+if os.path.isfile("~/Desktop/bobo.json"):
+    os.remove("~/Desktop/bobo.json")
 
 call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"])
 

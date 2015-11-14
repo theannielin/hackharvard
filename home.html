@@ -12,33 +12,31 @@
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
-		<h1>Stack Attack</h1>
+		<h1><a href="http://www.stakattak.me/">Stack Attack</a></h1>
 		<div><img id="gallery" src="stakattak2.png" alt=""/></div>
 		<p>a project by</p>
 		<p>annie lin, billie wei, joanne koong, nhu nguyen</p>
 
 		<div id="form" align="center">
-		<form method="post">
+		<form id="text" method="post">
 			<input id="sentences" type="number" placeholder="How many sentences?"/>
 			<br>
-			<div><textarea id="tags" rows="6" placeholder="tags?"></textarea></div>
+			<div><textarea id="tag" rows="6" placeholder="tag?"></textarea></div>
 			<input class="button" type="submit" value="Submit" />
 		</form>
 		</div>
-		
 		<br><br>
-		<div id="text"></div>
 
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script>
+		<script id="script">
 		$(document).ready(function(){
 			$('#form').submit(function(e){
 				var sentences = $('#sentences').val(),
-					tags = $('#tags').val(),
+					tags = $('#tag').val(),
 					url;
 				e.preventDefault();
 				if (!(sentences > 0 && sentences < 50)){
-					$('#text').html('( ͡° ͜ʖ ͡°)');
+					$('#text').html('Too many sentences! Try a smaller number.');
 					return;
 				}
 				if (tags) {
@@ -55,7 +53,7 @@
 				for (var i = 0; i < data.length; i++){
 					options += '<option value="' + data[i] + '">' + data[i] + '</option>';
 				}
-				$('#tags').html(options);
+				$('#tag').html(options);
 			})
 		})
 		</script>
