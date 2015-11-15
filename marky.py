@@ -23,13 +23,15 @@ def marky(num_sentences, tag):
 
     # Print five randomly-generated sentences
     for i in range(num_sentences):
-    	ans = text_model.make_sentence()
-    	if ans: 
+        ans = text_model.make_sentence()
+        if ans:
             re.sub(r'\<.*?\>', '', ans)
             if ans != '\n':
-                sentence += str(ans)
-        else: 
-            sentence += 'Recompile.'
+                sentence += str(ans.rstrip('\n'))
+            else:
+                sentence = ans
+        else: 
+            sentence += 'Recompile.'
 
     os.remove("~/Desktop/bobo.json")
 
