@@ -42,7 +42,6 @@
 
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script>
-		console.log('ho');
 		$(document).ready(function(){
 			$('#form').submit(function(e){
 				var sentences = $('#sentences').val(),
@@ -53,7 +52,7 @@
 					$('#text').html('Try a more reasonable number.');
 					return;
 				}
-				var url = 'http://localhost:8080/marks/' + sentences + '/' + tags;
+				var url = '/marks/' + sentences + '/' + tags;
 				$.getJSON(url, function(data){
 					$('#text').html(data["answer"]);
 				})

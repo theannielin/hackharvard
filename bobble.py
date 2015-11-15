@@ -18,7 +18,8 @@ def marks(sentences, tag):
 	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
 
-run(host='localhost', port=8080, debug=True)
+port = os.environ.get('PORT', 5000)
+run(host='0.0.0.0', port=port)
 
 
 
