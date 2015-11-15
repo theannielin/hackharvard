@@ -19,7 +19,7 @@ def marks(sentences, tag):
 	return json.dumps(answer)
 
 bottle.debug(True)
-bottle.run(server='gae')
+bottle.run(server='auto')
 application = bottle.app()
 
 
