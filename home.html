@@ -40,8 +40,9 @@
 		</div>
 		<br><br>
 
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script id="script">
+		console.log('ho');
 		$(document).ready(function(){
 			$('#form').submit(function(e){
 				var sentences = $('#sentences').val(),
@@ -52,22 +53,26 @@
 					$('#text').html('Try a more reasonable number.');
 					return;
 				}
-				if (tags) {
-					url = '/run/' + sentences + '/' + tags;
-				} else {
-					url = '/run/' + sentences;
-				}
-				$.get(url, function(data){
-					$('#text').html(data);
+				// if (tags) {
+				// 	url = '/run/' + sentences + '/' + tags;
+				// } else {
+				// 	url = '/run/' + sentences;
+				// }
+				// $.get(url, function(data){
+				// 	$('#text').html(data);
+				// })
+				console.log('YOOOOOO');
+				$.getJSON('http://localhost:8080/marks', function(data){
+					console.log('ho');
+					console.log(data);
+					// var options = '<option value="">All (best results)</option>';
+					// for (var i = 0; i < data.length; i++){
+					// 	options += '<option value="' + data[i] + '">' + data[i] + '</option>';
+					// }
+					$('#text').html(data["answer"]);
 				})
+
 			});
-			$.getJSON('/colleges_available', function(data){
-				var options = '<option value="">All (best results)</option>';
-				for (var i = 0; i < data.length; i++){
-					options += '<option value="' + data[i] + '">' + data[i] + '</option>';
-				}
-				$('#tag').html(options);
-			})
 		})
 		</script>
 	</body>

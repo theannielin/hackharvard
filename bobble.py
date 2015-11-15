@@ -1,5 +1,6 @@
 from bottle import route, run, template, static_file
 from marky import marky
+import json
 
 
 @route('/static/<filename>')
@@ -12,7 +13,9 @@ def home():
 
 @route('/marks')
 def marks():
-    return marky(5, 'ocaml')
+	answer = {}
+	answer['answer'] = marky(5, 'ocaml')
+	return json.dumps(answer)
 
 run(host='localhost', port=8080, debug=True)
 
