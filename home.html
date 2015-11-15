@@ -54,7 +54,7 @@
 				}
 				var url = '/marks/' + sentences + '/' + tags;
 				$.getJSON(url, function(data){
-					$('#text').html(("<b>Result</b>:<br>" + data["answer"]).replace(/(\r\n|\n|\r)/gm," "));
+					$('#text').html(("<b>Result</b>:<br>" + data["answer"].replace(/(\r\n|\n|\r)/gm," ")).replace(/(\r\n|\n|\r)/gm," "));
 				})
 
 			});
