@@ -17,7 +17,9 @@ def marks(sentences, tag):
 	answer = {}
 	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
-
-run(host="www.stakattak.me", port=int(os.environ.get("PORT", 5000)))
+	
+bottle.debug(True)
+bottle.run(server='gae')
+application = bottle.app()
 
 
