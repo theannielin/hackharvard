@@ -63,7 +63,7 @@
 				// })
 
 				console.log(document.location.host)
-				var url = '/marks/' + sentences + '/' + tags;
+				var url = window.location.host + '/marks/' + sentences + '/' + tags;
 				console.log('YOOOOOOBIETCHH');
 				$.getJSON(url, function(data){
 					console.log('hohahahaha');
