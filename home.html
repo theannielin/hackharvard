@@ -29,12 +29,12 @@
 		<div>
 			<img id="gallery" src="/static/stakattak2.png" alt=""/>
 		</div>
-		<p>poetic answers from your favorite place</p>
+		<p>poetic <a href="http://stackoverflow.com/">stackoverflow</a> answer generator</p>
 		<p>made by <a href="http://www.anniel.in">annie lin</a>, <a href="http://www.billiewei.com">billie wei</a>, <a href="http://www.joannekoong.com/">joanne koong</a>, <a href="http://www.nhunguyen.me/">nhu nguyen</a></p>
 		<div id="form" align="center">
 			<form id="text" method="post">
-				<input id="sentences" type="number" min="1" placeholder="How many sentences?" required><br>
-				<div><input id="tag" type="text" placeholder="tag" ng-trim="false" required pattern="^[A-Za-z0-9]{1,25}$"required></div><br>
+				<input id="sentences" type="number" min="1" placeholder="how many sentences? (larger number = slower response)" required><br>
+				<div><input id="tag" type="text" placeholder="one word tag to help generate answer (ex. Java)" ng-trim="false" required pattern="^[A-Za-z0-9]{1,25}$"required></div><br>
 				<input class="button" type="submit" value="Submit"/>
 			</form>
 		</div>
