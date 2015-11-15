@@ -53,25 +53,8 @@
 					$('#text').html('Try a more reasonable number.');
 					return;
 				}
-				// if (tags) {
-				// 	url = '/run/' + sentences + '/' + tags;
-				// } else {
-				// 	url = '/run/' + sentences;
-				// }
-				// $.get(url, function(data){
-				// 	$('#text').html(data);
-				// })
-
-				console.log(document.location.host)
-				var url = '/marks/' + sentences + '/' + tags;
-				console.log('YOOOOOOBIETCHH');
+				var url = 'http://localhost:8080/marks/' + sentences + '/' + tags;
 				$.getJSON(url, function(data){
-					console.log('hohahahaha');
-					console.log(data);
-					// var options = '<option value="">All (best results)</option>';
-					// for (var i = 0; i < data.length; i++){
-					// 	options += '<option value="' + data[i] + '">' + data[i] + '</option>';
-					// }
 					$('#text').html(data["answer"]);
 				})
 
