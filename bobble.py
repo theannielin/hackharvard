@@ -18,6 +18,6 @@ def marks(sentences, tag):
 	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
 
-run(host="hackharvard.herokuapp.com")
+bottle.run(server='gevent', port=os.environ.get('PORT', 5000))
 
 
