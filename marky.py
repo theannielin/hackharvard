@@ -27,10 +27,10 @@ def marky(num_sentences, tag):
     	if ans: 
             re.sub(r'\<.*?\>', '', ans)
             if ans != '\n':
-                sentence += str(ans.rstrip('\n'))
+                sentence += str(ans)
         else: 
             sentence += 'Recompile.'
 
     os.remove("~/Desktop/bobo.json")
 
-    return sentence
+    return sentence.rstrip('\n')
