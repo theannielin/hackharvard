@@ -61,9 +61,10 @@
 				// $.get(url, function(data){
 				// 	$('#text').html(data);
 				// })
+				var url = 'http://localhost:8080/marks/' + sentences + '/' + text;
 				console.log('YOOOOOO');
-				$.getJSON('http://localhost:8080/marks', function(data){
-					console.log('ho');
+				$.getJSON(url, function(data){
+					console.log('hohahahaha');
 					console.log(data);
 					// var options = '<option value="">All (best results)</option>';
 					// for (var i = 0; i < data.length; i++){

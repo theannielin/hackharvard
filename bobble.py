@@ -5,16 +5,16 @@ import json
 
 @route('/static/<filename>')
 def static(filename):
-    return static_file(filename, root='/Users/Joanne/Documents/hackharvard/static')
+    return static_file(filename, root='/Users/Annie/Dropbox/Fall 2015/Misc/hackharvard/static')
 
 @route('/')
 def home(): 
 	return template('home.html')
 
-@route('/marks')
-def marks():
+@route('/marks/<sentences:int>/<tag>')
+def marks(sentences, tag):
 	answer = {}
-	answer['answer'] = marky(5, 'ocaml')
+	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
 
 run(host='localhost', port=8080, debug=True)
