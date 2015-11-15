@@ -26,7 +26,7 @@ def marky(num_sentences, tag):
     	ans = text_model.make_sentence()
     	if ans: 
             re.sub(r'\<.*?\>', '', ans)
-            if ans != '\n'
+            if ans != '\n':
                 sentence += str(ans.rstrip('\n'))
             else: 
                 sentence += 'Probably, you need to rebuild the compiler.'
