@@ -18,6 +18,6 @@ def marks(sentences, tag):
 	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
 
-bottle.run(server='gevent', port=os.environ.get('PORT', 5000))
+run(host="www.stakattak.me", port=int(os.environ.get("PORT", 5000)))
 
 
