@@ -33,6 +33,11 @@ p {
 		color: #000;
 	}
 
+		a:hover {
+			text-decoration: none;
+			color: #ff9c40;
+		}
+
 img {
 	text-align: center;
 	float: center;
