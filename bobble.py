@@ -18,6 +18,7 @@ def marks(sentences, tag):
 	answer['answer'] = marky(sentences, tag)
 	return json.dumps(answer)
 
-bottle.run(server='gevent', port=os.environ.get('PORT', 5000))
+if __name__ == '__main__':
+    run(server='gunicorn', host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
 
 
