@@ -1,11 +1,12 @@
 from bottle import route, run, template, static_file
 from marky import marky
 import json
+import os
 
 
 @route('/static/<filename>')
 def static(filename):
-    return static_file(filename, root='/Users/Annie/Dropbox/Fall 2015/Misc/hackharvard/static')
+    return static_file(filename, root= os.getcwd() + '/static')
 
 @route('/')
 def home(): 
