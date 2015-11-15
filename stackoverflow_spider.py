@@ -4,6 +4,7 @@ import sys
 
 class StackOverflowSpider(scrapy.Spider):
     name = 'stackoverflow' 
+    list = []
     def __init__(self, tag=None, *args, **kwargs):
         super(StackOverflowSpider, self).__init__(*args, **kwargs)
         self.start_urls = ['http://stackoverflow.com/questions/tagged/%s' % tag.lower()]
@@ -14,9 +15,11 @@ class StackOverflowSpider(scrapy.Spider):
             yield scrapy.Request(full_url, callback=self.parse_question)
 
     def parse_question(self, response):
-        yield {
-            'answer': response.css('.answercell .post-text').extract(),
-        }
+        new_answer = response.css('.answercell .post-text').extract()
+        if len(new_answer) != 0:
+            yield {
+                'answer': new_answer,
+            }
 
 
 
