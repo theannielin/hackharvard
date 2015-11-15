@@ -1,4 +1,3 @@
 scrapy
 markovify
 bottle
-python-cffi
