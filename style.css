@@ -4,14 +4,15 @@
 h1 {
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 2.5em;
+	margin-top: 4em;
 	margin-bottom: 1em;
 }
 	h1 a {
 		font-family: Avenir;
-		font-weight: 200;
+		font-weight: 400;
 		letter-spacing: 0.2em;
 		text-decoration: none;
+		font-size: 25px;
 		color: #000;
 	}
 
@@ -32,6 +33,11 @@ p {
 		text-decoration: none;
 		color: #000;
 	}
+
+		a:hover {
+			text-decoration: none;
+			color: #ff9c40;
+		}
 
 img {
 	text-align: center;
@@ -87,7 +93,7 @@ img {
 	
 		form input[type="number"],
 		form input[type="email"],
-		form textarea
+		form input[type="text"]
 		{
 			text-align: center;
 			display: inline-block;
@@ -99,14 +105,8 @@ img {
 			font-family: 'Avenir';
 			font-size: 0.8em;
 			letter-spacing: 0.1em;
-			margin-bottom: 2em;
+			margin-bottom: 3em;
 		}
-
-			form textarea {
-				
-				width: 34em;
-				margin-bottom: 3em;
-			}
 
 /*********************************************************************************/
 /* Icons                                                                         */
