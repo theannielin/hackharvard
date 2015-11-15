@@ -4,14 +4,15 @@
 h1 {
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 2.5em;
+	margin-top: 4em;
 	margin-bottom: 1em;
 }
 	h1 a {
 		font-family: Avenir;
-		font-weight: 200;
+		font-weight: 400;
 		letter-spacing: 0.2em;
 		text-decoration: none;
+		font-size: 25px;
 		color: #000;
 	}
 
