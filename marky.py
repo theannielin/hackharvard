@@ -24,6 +24,7 @@ def marky(num_sentences, tag):
     # Print five randomly-generated sentences
     for i in range(num_sentences):
         ans = text_model.make_sentence()
+        ans = ans.replace('\n', 'recompile')
         if ans:
             re.sub(r'\<.*?\>', '', ans)
             if ans != '\n':
