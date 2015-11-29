@@ -43,4 +43,4 @@ class Markov():
 
 if __name__ == '__main__':
     m = Markov() 
-    m.marking("sample.txt")
+    print m.marking("sample.txt")
