@@ -33,7 +33,7 @@ def marky2(num_sentences, tag):
             if ans != '\n':
                 sentence += str(ans.rstrip('\n'))
             else:
-                sentence = ans
+                sentence = ans + ". "
         else:
             sentence += 'Recompile.'
 
@@ -42,3 +42,4 @@ def marky2(num_sentences, tag):
     return sentence.rstrip('\n')
 
 print(marky2(5,"python"))
+print "HI ANNIE!!!!"

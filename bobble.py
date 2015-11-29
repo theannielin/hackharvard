@@ -1,5 +1,5 @@
 from bottle import route, run, template, static_file
-from marky import marky
+from marky2 import marky2
 import json
 import os
 
@@ -15,7 +15,7 @@ def home():
 @route('/marks/<sentences:int>/<tag>')
 def marks(sentences, tag):
 	answer = {}
-	answer['answer'] = marky(sentences, tag)
+	answer['answer'] = marky2(sentences, tag)
 	return json.dumps(answer)
 
 port = os.environ.get('PORT', 5000)
