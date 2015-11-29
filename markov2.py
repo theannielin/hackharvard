@@ -27,6 +27,8 @@ class Markov():
         current_word = new[seed]
 
         while len(sentence_data) < length_sentence:
+            if len(self.markov[current_word]) == 0: 
+                self.seeding()
             next_index = random.randint(0, len(self.markov[current_word]) - 1)    # randomly pick a word from the last words list.
             next_word = self.markov[current_word][next_index]
             sentence_data.append(next_word)
@@ -37,3 +39,8 @@ class Markov():
     def marking(self, text_file):
         self.parse_text(text_file)
         return self.seeding()
+
+
+if __name__ == '__main__':
+    m = Markov() 
+    m.marking("sample.txt")
