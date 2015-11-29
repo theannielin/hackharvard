@@ -1,4 +1,4 @@
-import markovify
+import markov2
 import scrapy
 import sys
 import os
@@ -17,13 +17,16 @@ def marky2(num_sentences, tag):
         text = f.read()
 
     # Build the model.
-    text_model = markov2.marking("~/Desktop/bobo.json") 
+    m = markov2.Markov() 
+    text_model = m.marking("~/Desktop/bobo.json") 
 
     sentence = ''
 
     # Print five randomly-generated sentences
     for i in range(num_sentences):
-        ans = text_model.make_sentence()
+        m = markov2.Markov() 
+        ans = m.marking("~/Desktop/bobo.json") 
+        
         ans = ans.replace('\n', 'recompile')
         if ans:
             re.sub(r'\<.*?\>', '', ans)
