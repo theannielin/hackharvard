@@ -1,3 +1,10 @@
+# marky.py
+# Authors: {Annie Lin, Joanne Koong}
+# Date: {December 7, 2015}
+# Emails: {annielin@college.harvard.edu, joannekoong@college.harvard.edu}
+# ----------------
+# Our methods for scraping StackOverflow.
+
 import scrapy
 import sys
 
