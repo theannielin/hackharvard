@@ -29,7 +29,7 @@ def marky(num_sentences, tag):
 
     sentence = ''
 
-    # Print five randomly-generated sentences
+    # Print randomly-generated sentences
     for i in range(num_sentences): 
         m = markov.Markov() 
         ans = m.marking("~/Desktop/bobo.json") 

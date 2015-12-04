@@ -6,6 +6,40 @@
 # This creates our Markov chains. 
 
 import random
+import json
+
+class Search():
+    def __init__(self):
+        self.data = []
+
+    def parse_text(self, text_file):
+        with open(text_file) as f: 
+            jsons = f.read()
+            self.data = json.loads(jsons)
+
+    def response(self):
+        # just return a random answer related to the tag
+        rando = random.randint(0, len(self.data) - 1)
+        print self.data[rando]
+        return self.data[rando]
+
+    def searching(self, text_file):
+        self.parse_text(text_file)
+        return self.response()
+
+class Weighting():
+    def __init__(self):
+        self.data = []
+
+    def parse_text(self, text_file):
+        data = []
+
+class SDP():
+    def __init__(self):
+        self.markov = []
+
+    def parse_text(self, text_file):
+        data = []
 
 class Markov():
     def __init__(self):
