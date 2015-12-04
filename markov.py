@@ -88,7 +88,8 @@ class Markov():
 
         pos = 0
         while pos < len(data) - 1:    # add a word to the word-key's list if it immediately follows that word
-            self.markov[data[pos]].append(data[pos+1])
+            if data[pos+1] not in self.markov[data[pos]]:  
+                self.markov[data[pos]].append(data[pos+1])
             pos += 1
 
     def seeding(self):
