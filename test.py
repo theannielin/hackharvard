@@ -14,11 +14,14 @@ from subprocess import call
 import re
 import sys
 
+devnull = open(os.devnull, 'w')
+
 def search(tag):
     if os.path.isfile("~/Desktop/bobo.json"):
         os.remove("~/Desktop/bobo.json")
 
-    call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"])
+    call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"], 
+         stdout=devnull, stderr=devnull)
 
     with open("~/Desktop/bobo.json") as f:
         text = f.read()

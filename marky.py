@@ -13,11 +13,14 @@ import tempfile
 from subprocess import call
 import re
 
+devnull = open(os.devnull, 'w')
+
 def marky(num_sentences, tag):
     if os.path.isfile("~/Desktop/bobo.json"):
         os.remove("~/Desktop/bobo.json")
 
-    call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"])
+    call(["scrapy", "runspider", "stackoverflow_spider.py", "-a", "tag=%s" %tag ,"-o", "~/Desktop/bobo.json"], 
+         stdout=devnull, stderr=devnull)
 
     # Get raw text as string.
     with open("~/Desktop/bobo.json") as f:
