@@ -2,3 +2,4 @@ scrapy
 markovify
 bottle
 cffi==1.1.0
+textstat
