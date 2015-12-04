@@ -13,10 +13,11 @@ import tempfile
 from subprocess import call
 import re
 import sys
+import random
 
 devnull = open(os.devnull, 'w')
 
-def search(tag):
+def search(num_sentences, tag):
     if os.path.isfile("~/Desktop/bobo.json"):
         os.remove("~/Desktop/bobo.json")
 
@@ -28,13 +29,19 @@ def search(tag):
 
     sentences = ''
 
-    # Print random answer related to tag
-    s = markov.Search()
-    ans = s.searching("~/Desktop/bobo.json") 
-    if ans:
-        sentences += str(ans)
-    else:
-        sentences += 'Recompile.'
+    # Print sentences from random answers related to tag
+    for i in range(num_sentences): 
+        s = markov.Search()
+        ans = str(s.searching("~/Desktop/bobo.json"))
+        sent_list = ans.split('.')
+        rando = random.randint(0, len(sent_list) - 1)
+        sentence = sent_list[rando]
+        if ans:
+            # remove too many spaces
+            sentence = " ".join(sentence.split())
+            sentences += sentence + '. '
+        else:
+            sentences += 'Recompile.'
 
     os.remove("~/Desktop/bobo.json")
     return sentences
@@ -42,4 +49,4 @@ def search(tag):
 if __name__ == "__main__":
     sentences = int(input('Number of sentences: '))
     tag = str(input('Tag (between quotes): '))
-    print "1. SEARCH: " + search(tag)
+    print "1. SEARCH: " + search(sentences, tag)

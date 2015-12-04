@@ -20,7 +20,6 @@ class Search():
     def response(self):
         # just return a random answer related to the tag
         rando = random.randint(0, len(self.data) - 1)
-        print self.data[rando]
         return self.data[rando]
 
     def searching(self, text_file):
