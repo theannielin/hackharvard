@@ -10,15 +10,16 @@ from marky import marky
 import json
 import os
 
-
 @route('/static/<filename>')
 def static(filename):
     return static_file(filename, root= os.getcwd() + '/static')
 
+# Our homepage
 @route('/')
 def home(): 
 	return template('home.html')
 
+# Server response when a request is sent from homepage
 @route('/marks/<sentences:int>/<tag>')
 def marks(sentences, tag):
 	answer = {}

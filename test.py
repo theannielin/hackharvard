@@ -14,6 +14,8 @@ from subprocess import call
 import re
 import sys
 import random
+from textstat.textstat import textstat
+import time
 
 devnull = open(os.devnull, 'w')
 
@@ -108,8 +110,26 @@ def mmarkov(num_sentences, tag):
     return sentences
 
 if __name__ == "__main__":
+
     sentences = int(input('Number of sentences: '))
     tag = str(input('Tag (between quotes): '))
-    print "1. SEARCH: " + search(sentences, tag)
-    print "2. Markov: " + mmarkov(sentences, tag)
-    print "3. Markov Weighting: " + markovWeighting(sentences, tag)
+    start_time = time.time()
+    search_result = search(sentences, tag)
+    print "1. Search: " + search_result
+    print "Search Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
+                                                                         textstat.automated_readability_index(search_result), 
+                                                                         textstat.lexicon_count(search_result))
+    start_time = time.time()
+    markov_result = mmarkov(sentences, tag)
+    # markov_result = markovWeighting(sentences, tag)
+    print "2. Markov: " + markov_result
+    print "Markov Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
+                                                                         textstat.automated_readability_index(markov_result), 
+                                                                         textstat.lexicon_count(markov_result))
+    start_time = time.time()
+    mw_result = markovWeighting(sentences, tag)
+    # mw_result = mmarkov(sentences, tag)
+    print "3. Markov Weighting: " + mw_result
+    print "Markov Weighting Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
+                                                                                   textstat.automated_readability_index(mw_result), 
+                                                                                   textstat.lexicon_count(mw_result))

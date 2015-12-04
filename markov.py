@@ -18,7 +18,7 @@ class Search():
             self.data = json.loads(jsons)
 
     def response(self):
-        # just return a random answer related to the tag
+        # Just return a random answer related to the tag
         rando = random.randint(0, len(self.data) - 1)
         return self.data[rando]
 
@@ -65,15 +65,6 @@ class MarkovWeighting():
     def marking(self, text_file):
         self.parse_text(text_file)
         return self.seeding()
-
-
-
-class SDP():
-    def __init__(self):
-        self.markov = []
-
-    def parse_text(self, text_file):
-        data = []
 
 class Markov():
     def __init__(self):
