@@ -3,7 +3,7 @@
 # Date: {December 7, 2015}
 # Emails: {annielin@college.harvard.edu, joannekoong@college.harvard.edu}
 # ----------------
-# This tests search, weighting, and sequential decision-making.
+# This tests our methods in markov.py and reports stats.
 
 import markov
 import scrapy
@@ -116,20 +116,20 @@ if __name__ == "__main__":
     start_time = time.time()
     search_result = search(sentences, tag)
     print "1. Search: " + search_result
-    print "Search Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
-                                                                         textstat.automated_readability_index(search_result), 
-                                                                         textstat.lexicon_count(search_result))
+    print "Search Stats: \n Running Time: %s \n Readability Index: %s \n Word Count: %s " % (str(time.time() - start_time),
+                                                                         str(textstat.automated_readability_index(search_result)), 
+                                                                         str(textstat.lexicon_count(search_result)))
     start_time = time.time()
     markov_result = mmarkov(sentences, tag)
     # markov_result = markovWeighting(sentences, tag)
     print "2. Markov: " + markov_result
-    print "Markov Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
-                                                                         textstat.automated_readability_index(markov_result), 
-                                                                         textstat.lexicon_count(markov_result))
+    print "Markov Stats: \n Running Time: %s \n Readability Index: %s \n Word Count: %s " % (str(time.time() - start_time),
+                                                                         str(textstat.automated_readability_index(markov_result)), 
+                                                                         str(textstat.lexicon_count(markov_result)))
     start_time = time.time()
     mw_result = markovWeighting(sentences, tag)
     # mw_result = mmarkov(sentences, tag)
     print "3. Markov Weighting: " + mw_result
-    print "Markov Weighting Stats: \n Running Time: %d \n Readability Index: %d \n Word Count: %d " % (time.time() - start_time,
-                                                                                   textstat.automated_readability_index(mw_result), 
-                                                                                   textstat.lexicon_count(mw_result))
+    print "Markov Weighting Stats: \n Running Time: %s \n Readability Index: %s \n Word Count: %s " % (str(time.time() - start_time),
+                                                                                   str(textstat.automated_readability_index(mw_result)), 
+                                                                                   str(textstat.lexicon_count(mw_result)))
